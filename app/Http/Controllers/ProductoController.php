@@ -13,7 +13,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        echo 'hola desde el controlador';
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('crear');
+        return view('Rproducto.crear');
     }
 
     /**
@@ -34,7 +34,10 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $producto=new Producto();
+        $producto->nombreproducto=$request->input('Nproducto');
+        return 'Producto guardado';
     }
 
     /**

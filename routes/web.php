@@ -21,4 +21,8 @@ Route::get('/Ruta1', function(){
 Route::get('/name/{name}', function($name){
     return 'hola soy'.$name;
 });
-Route::resource('productos', 'ProductoController');
+//Route::get('productos', 'ProductoController@store');
+Route::Resource('productos', 'ProductoController');
+
+
+
