@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Ruta1', function(){
+    return 'Hola mundo.';
+});
+Route::get('/name/{name}', function($name){
+    return 'hola soy'.$name;
+});
+Route::resource('productos', 'ProductoController');
