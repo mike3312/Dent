@@ -13,7 +13,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        //echo 'hola';
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductoController extends Controller
     public function create()
     {
 
-        //return view('Rproducto.crear');
+        return view('Rproducto.crear');
     }
 
     /**
