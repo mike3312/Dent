@@ -38,6 +38,9 @@ class ProductoController extends Controller
 
         $producto=new Producto();
         $producto->nombreproducto=$request->input('nproducto');
+        //$producto->cantidad=$request->input('caproducto');
+        //$producto->costo=$request->input('cproducto');
+        //$producto->precio_venta=$request->input('pproducto');
         $producto->save();
         return 'Producto guardado';
     }
