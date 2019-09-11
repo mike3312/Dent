@@ -64,9 +64,10 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Producto $producto)
     {
-        //
+        //return $producto;
+        return view('Rproducto.editar', compact('producto'));
     }
 
     /**
@@ -76,9 +77,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Producto $producto)
     {
-        //
+        $producto->fill($request->all());
+        $producto->save();
+        return redirect()->route('productos.index')->with('status_edit','PRODUCTO EDITADO');
     }
 
     /**

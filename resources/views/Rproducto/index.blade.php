@@ -7,7 +7,12 @@
         <div class="alert alert-danger" role="alert">
             {{session('status')}}
         </div>
-@endif
+    @endif
+    @if(session('status_edit'))
+    <div class="alert alert-success" role="alert">
+        {{session('status_edit')}}
+    </div>
+    @endif
     <table class="table table-hover">
             <thead>
                 <tr>
@@ -27,11 +32,7 @@
                     <td>Q{{$producto->costo}}</td>
                     <td>Q{{$producto->precio_venta}}</td>
                     <td>
-                            <form class="form-group" method="POST" action="/productos/{{$producto->id}}">
-                                {{@method_field('DELETE')}}
-                                @csrf
-                                <button type="submit" class="btn btn-success">Editar</button>
-                            </form>
+                        <a href="/productos/{{$producto->id}}/edit" class="btn btn-success">Editar</a>        
                     </td>
                     <td>
                         <form class="form-group" method="POST" action="/productos/{{$producto->id}}">
