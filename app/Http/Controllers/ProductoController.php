@@ -13,7 +13,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //echo 'hola';
+        $productos = Producto::all();
+        return view('Rproducto.index', compact('productos'));
     }
 
     /**
@@ -38,11 +39,12 @@ class ProductoController extends Controller
 
         $producto=new Producto();
         $producto->nombreproducto=$request->input('nproducto');
-        //$producto->cantidad=$request->input('caproducto');
-        //$producto->costo=$request->input('cproducto');
-        //$producto->precio_venta=$request->input('pproducto');
+        $producto->cantidad=$request->input('caproducto');
+        $producto->costo=$request->input('coproducto');
+        $producto->precio_venta=$request->input('pproducto');
         $producto->save();
-        return 'Producto guardado';
+        return redirect()->route('productos.create')->with('status','PRODUCTO GUARDADO');
+        //return 'Producto guardado';
     }
 
     /**
@@ -85,8 +87,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        return redirect()->route('productos.index')->with('status','PRODUCTO ELIMINADO');
     }
 }

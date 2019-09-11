@@ -14,9 +14,9 @@ class NuevosDatos extends Migration
     public function up()
     {
         Schema::table('productos', function ($table) {
-            $table-> string('cantidad');
-            $table-> string('costo');
-            $table-> string('precio_venta');
+            $table-> string('cantidad')->nullable();
+            $table-> string('costo')->nullable();
+            $table-> string('precio_venta')->nullable();
         });
     }
 
