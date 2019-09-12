@@ -13,6 +13,8 @@
         {{session('status_edit')}}
     </div>
     @endif
+    <h1></h1>
+    <h3 style="text-align:center">LISTA DE PRODUCTOS</h3>
     <table class="table table-stripped">
             <thead class="thead-dark">
                 <tr class="text-center">
@@ -38,6 +40,7 @@
                     <td>
                         <div class="btn-group">
                             <div class="btn btn-success"><a href="/productos/{{$producto->id}}/edit" style="color: white;">Editar</a>  </div>      
+                            <a class="btn btn-primary" href="/productos/{{$producto->id}}/retirar">Retirar</a>
                             <form id="frm" method="POST" action="/productos/{{$producto->id}}">
                                 {{@method_field('DELETE')}}
                                 @csrf

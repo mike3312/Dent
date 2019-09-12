@@ -8,22 +8,28 @@
             {{session('status')}}
         </div>
     @endif
+    
     <form class="form-group" method="POST" action="/productos/{{$producto->id}}">
         @method('PUT')
         @csrf
-        <div class="container">
+        <div class="page-header">
+                <h3 style="text-align:center">EDITAR PRODUCTO</h3>
+              </div>
             <div class="form-group">
-                <h1></h1>
-                <label for="">NOMBRE DEL PRODUCTO</label>
+                <label for="">Nombre del producto</label>
                 <input type="text" name="nombreproducto" value="{{$producto->nombreproducto}}" class="form-control"required>
-                <label for=""> CANTIDAD</label>
+                <label for=""> Cantidad</label>
                 <input type="number"step="any" min="0" name="cantidad" value="{{$producto->cantidad}}"class="form-control" required>
-                <label for=""> COSTO</label>
+                <label for=""> Costo</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="costo" value="{{$producto->costo}}"class="form-control" required>
-                <label for=""> PRECIO</label>
+                <label for=""> Precio Venta</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="precio_venta" value="{{$producto->precio_venta}}"class="form-control" required>
+                <H1></H1>
                 <button type="submit" class="btn btn-primary">EDITAR</button>
             </div>
         </div>
+
     </form>
+
+
 @endsection

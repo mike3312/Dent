@@ -69,6 +69,12 @@ class ProductoController extends Controller
         //return $producto;
         return view('Rproducto.editar', compact('producto'));
     }
+    
+    public function retirar(Producto $producto)
+    {
+        //return $producto;
+        return view('Rproducto.retirar', compact('producto'));
+    }
 
     /**
      * Update the specified resource in storage.

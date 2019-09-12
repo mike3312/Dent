@@ -12,21 +12,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- JavaScript -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>
-
-<!-- CSS -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
-<!-- Default theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.min.css"/>
-<!-- Semantic UI theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.min.css"/>
-<!-- Bootstrap theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.min.css"/>
 </head>
 <body style="">
-    <nav class="navbar navbar-dark bg-primary">
-        <a href="#" class="navbar-brand">CLINICA DESTREZA DENTAL</a>
-    </nav>
-    
+        <nav class="navbar navbar-dark bg-primary">
+                <a href="#" class="navbar-brand">CLINICA DESTREZA DENTAL</a>
+                <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" style="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          OPCIONES
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="/productos">Ver Lista de Productos</a>
+                          <a class="dropdown-item" href="/productos/create">Crear Producto</a>
+                        </div>
+                      </div>
+              </nav>
     <div class="container">
         @yield('content')
     </div>

@@ -12,14 +12,14 @@
         @csrf
         <div class="container">
             <div class="form-group">
-                <h1></h1>
-                <label for="">NOMBRE DEL PRODUCTO</label>
+                    <h3 style="text-align:center">CREAR NUEVO PRODUCTO</h3>
+                <label for="">Nombre Del Producto</label>
                 <input type="text" name="nproducto" class="form-control"required>
-                <label for=""> CANTIDAD</label>
+                <label for=""> Cantidad</label>
                 <input type="number"step="any" \min="0" name="caproducto" class="form-control" required>
-                <label for=""> COSTO</label>
+                <label for=""> Costo</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="coproducto" class="form-control" required>
-                <label for=""> PRECIO</label>
+                <label for=""> Precio Venta</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="pproducto" class="form-control" required>
                 <button type="submit" class="btn btn-primary">GUARDAR</button>
             </div>
