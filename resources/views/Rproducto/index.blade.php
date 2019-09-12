@@ -21,8 +21,8 @@
                     <th> # </th>
                     <th scope="col">Producto</th>
                     <th scope="col" >Existencia</th>
-                    <th scope="col">Costo</th>
-                    <th scope="col">Precio Venta</th>
+                    <th scope="col">Costo Unitario</th>
+                    <th scope="col">Precio Venta Unidad</th>
                     <th scope="col">Accion</th>
                 </tr>
             </thead>

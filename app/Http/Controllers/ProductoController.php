@@ -98,8 +98,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        return $producto;
-        //$producto->delete();
-        //return redirect()->route('productos.index')->with('status','PRODUCTO ELIMINADO');
+        //return $producto;
+        $producto->delete();
+        return redirect()->route('productos.index')->with('status','PRODUCTO ELIMINADO');
     }
 }

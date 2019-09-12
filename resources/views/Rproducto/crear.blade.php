@@ -17,9 +17,9 @@
                 <input type="text" name="nproducto" class="form-control"required>
                 <label for=""> Cantidad</label>
                 <input type="number"step="any" \min="0" name="caproducto" class="form-control" required>
-                <label for=""> Costo</label>
+                <label for=""> Costo por Unidad</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="coproducto" class="form-control" required>
-                <label for=""> Precio Venta</label>
+                <label for=""> Precio Venta por Unidad</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="pproducto" class="form-control" required>
                 <button type="submit" class="btn btn-primary">GUARDAR</button>
             </div>

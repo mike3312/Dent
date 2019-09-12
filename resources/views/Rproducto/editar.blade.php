@@ -20,9 +20,9 @@
                 <input type="text" name="nombreproducto" value="{{$producto->nombreproducto}}" class="form-control"required>
                 <label for=""> Cantidad</label>
                 <input type="number"step="any" min="0" name="cantidad" value="{{$producto->cantidad}}"class="form-control" required>
-                <label for=""> Costo</label>
+                <label for=""> Costo por Unidad</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="costo" value="{{$producto->costo}}"class="form-control" required>
-                <label for=""> Precio Venta</label>
+                <label for=""> Precio Venta Unidad</label>
                 <input type="text" pattern="^[0-9]+([.][0-9]+)?$" min="0" name="precio_venta" value="{{$producto->precio_venta}}"class="form-control" required>
                 <H1></H1>
                 <button type="submit" class="btn btn-primary">EDITAR</button>
