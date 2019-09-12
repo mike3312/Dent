@@ -35,8 +35,8 @@
                     <td> <?php print $cont; ?></td>
                     <td>{{$producto->nombreproducto}}</td>
                     <td>{{$producto->cantidad}}</td>
-                    <td>Q{{$producto->costo}}</td>
-                    <td>Q{{$producto->precio_venta}}</td>
+                    <td>Q {{$producto->costo}}</td>
+                    <td>Q {{$producto->precio_venta}}</td>
                     <td>
                         <div class="btn-group">
                             <div class="btn btn-success"><a href="/productos/{{$producto->id}}/edit" style="color: white;">Editar</a>  </div>      
