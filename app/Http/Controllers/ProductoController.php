@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Producto;
 class ProductoController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return view('Rproducto.index', compact('productos'));
     }
 
     /**
@@ -23,6 +24,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
+
         return view('Rproducto.crear');
     }
 
@@ -36,8 +38,13 @@ class ProductoController extends Controller
     {
 
         $producto=new Producto();
-        $producto->nombreproducto=$request->input('Nproducto');
-        return 'Producto guardado';
+        $producto->nombreproducto=$request->input('nproducto');
+        $producto->cantidad=$request->input('caproducto');
+        $producto->costo=$request->input('coproducto');
+        $producto->precio_venta=$request->input('pproducto');
+        $producto->save();
+        return redirect()->route('productos.create')->with('status','PRODUCTO GUARDADO');
+        //return 'Producto guardado';
     }
 
     /**
@@ -57,9 +64,16 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Producto $producto)
     {
-        //
+        //return $producto;
+        return view('Rproducto.editar', compact('producto'));
+    }
+    
+    public function retirar(Producto $producto)
+    {
+        //return $producto;
+        return view('Rproducto.retirar', compact('producto'));
     }
 
     /**
@@ -69,9 +83,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Producto $producto)
     {
-        //
+        $producto->fill($request->all());
+        $producto->save();
+        return redirect()->route('productos.index')->with('status_edit','PRODUCTO EDITADO');
     }
 
     /**
@@ -80,8 +96,10 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Producto $producto)
     {
-        //
+        //return $producto;
+        $producto->delete();
+        return redirect()->route('productos.index')->with('status','PRODUCTO ELIMINADO');
     }
 }
