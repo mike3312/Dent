@@ -16,7 +16,7 @@
 <body style="">
         <nav class="navbar navbar-dark bg-primary">
                 <a href="#" class="navbar-brand">CLINICA DESTREZA DENTAL</a>
-                <div class="dropdown">
+                <div class="dropleft">
                         <button class="btn btn-success dropdown-toggle" style="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           OPCIONES
                         </button>
