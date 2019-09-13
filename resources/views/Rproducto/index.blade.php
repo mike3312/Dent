@@ -13,6 +13,11 @@
         {{session('status_edit')}}
     </div>
     @endif
+    @if(session('status_ret'))
+    <div class="alert alert-success" role="alert">
+        {{session('status_ret')}}
+    </div>
+    @endif
     <h1></h1>
     <h3 style="text-align:center">LISTA DE PRODUCTOS</h3>
     <table class="table table-stripped">

@@ -22,6 +22,7 @@ Route::get('/name/{name}', function($name){
     return 'hola soy'.$name;
 });
 Route::get('productos/{producto}/retirar', 'ProductoController@retirar');
+Route::put('productos/{producto}/r', 'ProductoController@rupdate');
 Route::Resource('productos', 'ProductoController');
 
 

@@ -9,7 +9,7 @@
         </div>
     @endif
     
-    <form class="form-group" method="POST" action="/productos/{{$producto->id}}">
+    <form class="form-group" method="POST" action="/productos/{{$producto->id}}/r">
         @method('PUT')
         @csrf
         <div class="page-header">

@@ -91,6 +91,24 @@ class ProductoController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function rupdate(Request $request, Producto $producto)
+    {
+         $datorestar=$request->cantidad;
+         $datobase=$producto->cantidad;
+         $resultado=$datobase-$datorestar;
+         $producto->cantidad =$resultado;
+        $producto->save();
+        //$producto->fill($request->all());
+        return redirect()->route('productos.index')->with('status_ret','RETIRO EXITOSO');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
